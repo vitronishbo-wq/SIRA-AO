@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-serif: "Lora", Georgia, Cambria, "Times New Roman", Times, serif;
+  
+  --color-gold-50: #fefbeb;
+  --color-gold-100: #fef3c7;
+  --color-gold-500: #eab308;
+  --color-gold-600: #ca8a04;
+  --color-gold-700: #a16207;
+  --color-angola-red: #da291c;
+}
+
+/* Custom fade transitions and scroll effects */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.3);
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(234, 179, 8, 0.3);
+  border-radius: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(234, 179, 8, 0.6);
+}
+
+@media screen {
+  .print-a4-container {
+    display: none !important;
+  }
+}
+
+/* Custom classes for sovereign government styling */
+.font-gov-serif {
+  font-family: var(--font-serif);
+}
+
+.font-gov-sans {
+  font-family: var(--font-sans);
+}
+
+@media print {
+  body {
+    background-color: white !important;
+    color: black !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  
+  .page-break-after {
+    page-break-after: always !important;
+    break-after: page !important;
+  }
+
+  @page {
+    size: A4 portrait;
+    margin: 25mm 25mm 25mm 25mm !important;
+  }
+
+  /* Fixed A4-sized container style during print event */
+  .print-a4-container {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white !important;
+    box-shadow: none !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Core page styling overrides for print media to prevent overflow and tiny text */
+  .sira-page {
+    padding: 0 !important;
+    margin: 0 0 40px 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-height: auto !important;
+    background: transparent !important;
+    page-break-after: always !important;
+    break-after: page !important;
+    box-sizing: border-box !important;
+  }
+
+  .sira-page:last-child {
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* Typography rules for official read / print styling */
+  .gov-heading {
+    font-family: var(--font-serif) !important;
+    font-weight: 700 !important;
+    color: #111111 !important;
+    letter-spacing: -0.02em !important;
+  }
+  
+  .gov-subheading {
+    font-family: var(--font-serif) !important;
+    font-weight: 600 !important;
+    color: #222222 !important;
+  }
+
+  .gov-body {
+    font-family: var(--font-sans) !important;
+    font-size: 11pt !important;
+    line-height: 1.6 !important;
+    color: #1a1a1a !important;
+    text-align: justify !important;
+  }
+}
+
+

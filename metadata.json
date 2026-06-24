@@ -1,0 +1,6 @@
+{
+  "name": "SIRA",
+  "description": "Sistema Integrado de Responsabilização e Administração de Armamento - Portal Institucional da Proposta Estratégica Nacional para Angola",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
